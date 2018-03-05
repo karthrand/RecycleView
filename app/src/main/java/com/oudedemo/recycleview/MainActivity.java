@@ -25,7 +25,7 @@ public class MainActivity extends Activity
     private void initMylist()
     {
         for (int i=0;i<2;i++){
-            MyList  list1 = new MyList("List1",R.drawable.ic_launcher);
+            MyList  list1 = new MyList("RecycleView实现Activity跳转",R.drawable.ic_launcher);
             list.add(list1);
             MyList  list2 = new MyList("List2",R.drawable.ic_launcher);
             list.add(list2);

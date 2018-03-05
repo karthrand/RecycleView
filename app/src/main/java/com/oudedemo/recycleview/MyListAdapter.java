@@ -3,6 +3,7 @@ import android.support.v7.widget.*;
 import java.util.*;
 import android.view.*;
 import android.widget.*;
+import android.content.*;
 
 public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder>
 {
@@ -34,7 +35,16 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
                 public void onClick(View v) {
                     int position = holder.getAdapterPosition();
                     MyList MyList = mMyList.get(position);
-                    Toast.makeText(v.getContext(), "you clicked view " + MyList.getName(), Toast.LENGTH_SHORT).show();
+                    switch(position){
+                        case 0:
+                            Intent intent = new Intent(v.getContext(),TargetActivity.class);
+                            v.getContext().startActivity(intent);
+                            
+                            break;
+                        default:
+                            Toast.makeText(v.getContext(), "you clicked view " + MyList.getName(), Toast.LENGTH_SHORT).show();
+                        break;
+                    }
                 }
             });
         holder.MyListImage.setOnClickListener(new View.OnClickListener() {
